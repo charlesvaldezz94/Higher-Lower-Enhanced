@@ -17,7 +17,12 @@ function prompt() {
             promptMessage.innerHTML = "You cannot choose a value less than or equal to zero."
         }
         else {
-            promptMessage.innerHTML = `The max number will be ${max}, please choose a number between 1 - ${max}`
+            if (max % 1 != 0) {
+                max = Math.round(max);
+                promptMessage.innerHTML = `The max number will be ${max}, please choose a number between 1 - ${max}`
+            }
+            else {
+                promptMessage.innerHTML = `The max number will be ${max}, please choose a number between 1 - ${max}`
         }
     }
 
@@ -92,4 +97,4 @@ function guessNumber() {
 
 
     }
-};
+}};
